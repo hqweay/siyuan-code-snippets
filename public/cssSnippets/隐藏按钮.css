@@ -1,0 +1,161 @@
+/** 隐藏提示框 **/
+#tooltip {
+	display: none !important;
+}
+
+.b3-tooltips:hover::before,
+.b3-tooltips:hover::after {
+	display: none !important;
+}
+
+/** 隐藏首页的用户指南按钮 **/
+.layout-tab-container #editorEmptyHelp {
+	display: none !important;
+}
+
+/** 隐藏左侧边栏的取消钉住按钮 **/
+#dockLeft .dock__item--pin {
+	display: none !important;
+}
+
+/** 隐藏左侧边栏的收集箱按钮 **/
+#dockLeft span[data-type='inbox'] {
+	display: none !important;
+}
+
+/** 隐藏左侧边栏的书签按钮 **/
+#dockLeft span[data-type='bookmark'] {
+	display: none !important;
+}
+
+/** 隐藏左侧边栏的标签按钮 **/
+#dockLeft span[data-type='tag'] {
+	display: none !important;
+}
+
+/** 隐藏右侧边栏 **/
+#dockRight {
+	display: none !important;
+}
+
+/** 隐藏底部边栏的帮助按钮 **/
+#status #statusHelp {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的数据同步按钮 **/
+#toolbar #barSync {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的后退按钮 **/
+#toolbar #barBack {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的前进按钮 **/
+#toolbar #barForward {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的订阅图标按钮 **/
+#toolbar #toolbarVIP {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的插件按钮 **/
+#toolbar #barPlugins {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的命令按钮 **/
+#toolbar #barCommand {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的退出按钮 **/
+#toolbar #barExit {
+	display: none !important;
+}
+
+/** 隐藏顶部边栏的更多按钮 **/
+#toolbar #barMore {
+	display: none !important;
+}
+
+/** 隐藏标签栏的加号按钮 **/
+.layout__center ul.layout-tab-bar:last-of-type li {
+	display: none !important;
+}
+
+/** 隐藏编辑区的面包屑 **/
+.protyle-breadcrumb .protyle-breadcrumb__bar {
+	display: none !important;
+}
+
+/** 隐藏编辑区的顶部背景按钮 **/
+.protyle-background {
+	display: none !important;
+}
+
+/** 隐藏编辑区的展开折叠按钮 **/
+.protyle-content .button[aria-label='折叠/展开'] {
+	display: none !important;
+}
+
+/** 隐藏所有菜单项的分割线 **/
+.b3-menu__separator {
+	display: none !important;
+}
+
+/** 隐藏最近的文档的左侧导航 **/
+div[data-key=dialog-recentdocs] ul.b3-list--background:first-of-type {
+	display: none !important;
+}
+
+/** 隐藏搜索框的列出引用失效的块按钮 **/
+div[data-key=dialog-globalsearch] #searchUnRef {
+	display: none !important;
+}
+
+/** 隐藏搜索框的搜索资源文件内容按钮 **/
+div[data-key=dialog-globalsearch] #searchAsset {
+	display: none !important;
+}
+
+/** 隐藏搜索框的搜索类型按钮 **/
+div[data-key=dialog-globalsearch] #searchFilter {
+	display: none !important;
+}
+
+/** 隐藏设置面板设置项的下划线 **/
+.config__tab-container .b3-label:not(.b3-label--inner) {
+	box-shadow: none !important;
+}
+
+/** 隐藏设置面板的搜索框 **/
+.config__tab-container .b3-label:not(.b3-label--inner) {
+	box-shadow: none !important;
+}
+
+.config__tab-title {
+	margin-bottom: 0 !important;
+}
+
+.config__tab-title+.b3-form__icon {
+	display: none !important;
+}
+
+.config__tab-title~.config__tab-hr {
+	margin-top: 8px !important;
+}
+
+/** 隐藏数据历史的数据快照 **/
+div[data-key=dialog-history] div[data-type=repo] {
+	display: none !important;
+}
+
+/** 修复显示插件配置项 **/
+div[id^=plugin] .b3-label {
+	display: block !important;
+}
