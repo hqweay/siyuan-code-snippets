@@ -129,7 +129,7 @@
       on:changed={onChanged}
       on:click={onClick}
     >
-      <div class="fn__flex b3-label">💡 部分功能设置后需重启插件生效.</div>
+      <!-- <div class="fn__flex b3-label">💡 部分功能设置后需重启插件生效.</div> -->
     </SettingPanel>
   </div>
 </div>
