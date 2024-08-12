@@ -10,16 +10,27 @@
 
   const initData = () => {
     return {
-      开关: snippets.map((ele) => {
-        return {
-          type: "checkbox",
-          title: `${ele.title} - ${ele.author && ele.link ? `@<a href= '${ele.link}'>${ele.author}</a>` : ""}`,
-          description: `${ele.description}`,
-          key: `${ele.author}-${ele.title}`,
-          value: settings.getFlag(`${ele.author}-${ele.title}`),
-          hasSetting: true,
-        };
-      }),
+      集市:
+        // snippets.map((ele) => {
+        //   return {
+        //     type: "checkbox",
+        //     title: `${ele.title} - ${ele.author && ele.link ? `@<a href= '${ele.link}'>${ele.author}</a>` : ""}`,
+        //     description: `${ele.description}`,
+        //     key: `${ele.author}-${ele.title}`,
+        //     value: settings.getFlag(`${ele.author}-${ele.title}`),
+        //     hasSetting: true,
+        //   };
+        // }),
+        plugin.codeSnippets.map((ele) => {
+          return {
+            type: "checkbox",
+            title: `${ele.title} - ${ele.author && ele.link ? `@<a href= '${ele.link}'>${ele.author}</a>` : ""}`,
+            description: `${ele.description}`,
+            key: `${ele.id}`,
+            value: settings.getFlag(`${ele.author}-${ele.title}`),
+            hasSetting: true,
+          };
+        }),
       设置: [
         {
           type: "button",
@@ -42,14 +53,14 @@
   let SettingItems = initData();
 
   $: groups = [
-    "开关",
+    "集市",
     "设置",
-    // ...SettingItems["开关"]
+    // ...SettingItems["集市"]
     //   .filter((item) => item.value === true && item.hasSetting)
     //   .map((item) => item.title),
   ];
 
-  let focusGroup = "开关";
+  let focusGroup = "集市";
 
   /********** Events **********/
   interface ChangeEvent {
@@ -73,15 +84,18 @@
   };
 
   const onChanged = ({ detail }: CustomEvent<ChangeEvent>) => {
-    if (detail.group === "开关") {
+    if (detail.group === "集市") {
       settings.setFlag(detail.key, detail.value);
       if (detail.value) {
-        plugin.insertCss.insertSingleCSSByKey(detail.key);
-      }else{
-       plugin.insertCss.onunloadCSSByKey(detail.key);
+        console.log(detail);
+        // plugin.insertCss.insertSingleCSSByKey(detail.key);
+        plugin.insertCss.insertSingleCSSByID(detail.key);
+      } else {
+        // plugin.insertCss.onunloadCSSByKey(detail.key);
+        plugin.insertCss.onunloadCSSByID(detail.key);
       }
     } else {
-      const opItem = SettingItems["开关"].filter((ele) => {
+      const opItem = SettingItems["集市"].filter((ele) => {
         return ele.title === detail.group;
       });
       // console.log(opItem);

@@ -1,6 +1,6 @@
 import { settings } from "@/settings";
 import { snippets } from "@/snippets";
-import { getFileContent } from "@/utils";
+import { getFileContent, plugin } from "@/utils";
 import { fetchSyncPost } from "siyuan";
 
 export default class InsertCSS {
@@ -42,6 +42,28 @@ export default class InsertCSS {
       document.head.appendChild(styleElement);
     }
   }
+  async insertSingleCSSByID(id) {
+    let cssConfig = plugin.codeSnippets.find((ele) => {
+      return ele.id === id;
+    });
+
+    console.log(cssConfig);
+
+    let styleElement = document.createElement("style");
+    styleElement.id = `code-snippets-${cssConfig.id}`;
+
+    styleElement.textContent += cssConfig.code;
+    document.head.appendChild(styleElement);
+  }
+  async onunloadCSSByID(id) {
+    const styleElement = document.getElementById(`code-snippets-${id}`);
+
+    if (styleElement) {
+      styleElement.remove();
+    } else {
+    }
+  }
+
   async onunloadCSSByKey(key) {
     let configs = key.split("-");
     let cssConfig = snippets.find((ele) => {
